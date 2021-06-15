@@ -1,4 +1,4 @@
-# Simple way to access and confiure your CISCO router 
+# Simple way to access and confiure your CISCO device 
 # https://docs.python.org/3/library/telnetlib.html
 
 import getpass
@@ -16,7 +16,8 @@ if password:
     tn.read_until(b"Password: ")
     tn.write(password.encode('ascii') + b"\n")
 
-# Below should be your own configuration you want to apply to router
+# Below should be your own configuration you want to apply to device
+# We can use loops for creating n numbers of VLAN
 tn.write(b"enable\n")
 tn.write(b"cisco\n")
 tn.write(b"conf t\n")
